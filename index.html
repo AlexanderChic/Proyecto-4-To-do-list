@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List por Prioridad</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <div class="todo-container">
+    <h1>Lista de Tareas</h1>
+    
+    <div class="input-group">
+      <input type="text" id="new-task" placeholder="Agregar nueva tarea" />
+      <input type="date" id="task-date" placeholder="Fecha máxima" min="" />
+      <select id="priority-select">
+        <option value="low">✅ Bajo Impacto</option>
+        <option value="medium">⚠️ Prioridad Media</option>
+        <option value="high">🚨 Alta Prioridad</option>
+      </select>
+      <button id="add-task-btn"><i class="fas fa-plus"></i> Agregar</button>
+    </div>
+    
+    <div class="filters">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar tareas..." />
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="filter-buttons">
+        <button id="filter-all" class="filter-btn active">Todas</button>
+        <button id="filter-pending" class="filter-btn">Pendientes</button>
+        <button id="filter-completed" class="filter-btn">Completadas</button>
+      </div>
+      <button id="add-delete-task-btn"><i class="fas fa-trash"></i> Eliminar marcadas</button>
+    </div>
+
+    <div class="columns">
+      <div class="column" id="high-priority-column">
+        <h3 class="high">🚨 Alta Prioridad</h3>
+        <ul id="high-priority" class="task-list" data-priority="high">
+          <li class="empty-message">Sin tareas en esta categoría</li>
+        </ul>
+      </div>
+      <div class="column" id="medium-priority-column">
+        <h3 class="medium">⚠️ Prioridad Media</h3>
+        <ul id="medium-priority" class="task-list" data-priority="medium">
+          <li class="empty-message">Sin tareas en esta categoría</li>
+        </ul>
+      </div>
+      <div class="column" id="low-priority-column">
+        <h3 class="low">✅ Bajo Impacto</h3>
+        <ul id="low-priority" class="task-list" data-priority="low">
+          <li class="empty-message">Sin tareas en esta categoría</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
